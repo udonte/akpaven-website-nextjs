@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Container } from "@/ui/Container";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,7 +20,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <Container className="flex items-center justify-between py-4">
         <Link href="/" className="text-lg font-bold tracking-tight text-white">
           Akpaven<span className="text-amber">.</span>
         </Link>
@@ -56,7 +57,7 @@ export function Header() {
         >
           {mobileOpen ? <HiX size={24} /> : <HiMenu size={24} />}
         </button>
-      </div>
+      </Container>
 
       {mobileOpen && (
         <nav

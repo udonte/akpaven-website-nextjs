@@ -9,6 +9,7 @@ import {
   FaSpellCheck,
   FaExclamationTriangle,
 } from "react-icons/fa";
+import { Container } from "@/ui/Container";
 
 const COMPLIANCE_METRICS = [
   {
@@ -43,7 +44,7 @@ export default function ComplianceTeaser() {
       {/* Background Graphic Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#EAB308]/[0.02] to-transparent rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: High-Ticket Target Zero Brand Lockup */}
           <div className="col-span-1 lg:col-span-5">
@@ -120,7 +121,7 @@ export default function ComplianceTeaser() {
             })}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

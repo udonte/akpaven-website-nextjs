@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
+import { Container } from "@/ui/Container";
 
 // Corporate / Institutional Partners list
 const PARTNERS = [
@@ -23,11 +24,11 @@ export default function TrustBanner() {
       <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-linear-to-r from-[#0B0F19] to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-linear-to-l from-[#0B0F19] to-transparent z-10 pointer-events-none" />
 
-      <div className="container mx-auto px-4 mb-4 text-center">
+      <Container className="mb-4 text-center">
         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-slate-500">
           Trusted Framework Partner For Global & National Frameworks
         </p>
-      </div>
+      </Container>
 
       {/* Infinite Motion Scroll Track */}
       <div className="flex w-full overflow-hidden mask-linear">

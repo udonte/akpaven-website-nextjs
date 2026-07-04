@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { HiArrowRight, HiDocumentArrowDown } from "react-icons/hi2";
 import { LiaFileContractSolid } from "react-icons/lia";
+import { Container } from "@/ui/Container";
 
 export default function LeadConversionCtas() {
   const panelRef = useRef(null);
@@ -18,7 +19,7 @@ export default function LeadConversionCtas() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#0b0f19_1px,transparent_1px),linear-gradient(to_bottom,#0b0f19_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-40 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/50 via-transparent to-[#0B0F19]/90 z-0 pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container className="relative z-10">
         {/* Top Centered Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <motion.span
@@ -114,7 +115,7 @@ export default function LeadConversionCtas() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { HiArrowRight } from "react-icons/hi2";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
+import { Container } from "@/ui/Container";
 
 const headlineLine1 = ["Engineering", "the", "Future", "of"];
 const headlineLine2 = ["African", "Infrastructure."];
@@ -108,7 +109,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto flex h-full w-full flex-col justify-center px-4 pt-24 pb-12 sm:px-6 lg:px-8">
+      <Container className="relative z-20 flex h-full flex-col justify-center pt-24 pb-12">
         <div className="max-w-4xl">
           <motion.div
             initial="hidden"
@@ -172,10 +173,9 @@ export default function Hero() {
             </Link>
           </motion.div>
         </div>
-      </div>
 
-      {/* Floating stat badges */}
-      <div className="absolute right-12 bottom-12 z-20 hidden flex-col gap-4 lg:flex">
+        {/* Floating stat badges — aligned to container right edge */}
+        <div className="absolute right-4 bottom-12 z-20 hidden flex-col gap-4 lg:right-8 lg:flex">
         {[
           { metric: "23+", label: "Years Experience" },
           { metric: "100%", label: "HSE Compliance" },
@@ -193,7 +193,8 @@ export default function Hero() {
             </div>
           </motion.div>
         ))}
-      </div>
+        </div>
+      </Container>
     </section>
   );
 }

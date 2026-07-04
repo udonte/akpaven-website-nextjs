@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "motion/react";
 import { HiCheckCircle } from "react-icons/hi2";
+import { Container } from "@/ui/Container";
 
 // Reusable micro-counter component for data precision
 function AnimatedCounter({
@@ -46,7 +47,7 @@ export default function ExecutiveSummary() {
       ref={containerRef}
       className="relative w-full bg-[#0F172A] py-24 lg:py-32 overflow-hidden border-b border-slate-800/50"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Side: Heavy Engineering Montage / Structural Parallax Layout */}
           <div className="col-span-1 lg:col-span-6 relative h-[450px] sm:h-[600px] w-full">
@@ -184,7 +185,7 @@ export default function ExecutiveSummary() {
             </motion.ul>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -9,6 +9,7 @@ import {
   MdOutlinePrecisionManufacturing,
   MdOutlineElectricalServices,
 } from "react-icons/md";
+import { Container } from "@/ui/Container";
 
 const DISCIPLINES = [
   {
@@ -73,7 +74,7 @@ export default function CapabilitiesHighlight() {
       ref={containerRef}
       className="relative w-full bg-[#0B0F19] py-24 lg:py-32 border-b border-slate-800/50 overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         {/* Section Header */}
         <div className="max-w-3xl mb-16 sm:mb-20">
           <motion.span
@@ -162,7 +163,7 @@ export default function CapabilitiesHighlight() {
             );
           })}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
