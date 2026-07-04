@@ -40,7 +40,7 @@ const DISCIPLINES = [
     description:
       "Procurement, technical fabrication, and high-pressure asset integrity installations for heavy onshore facilities and industrial process networks.",
     icon: LuUtilityPole,
-    img: "https://images.unsplash.com/photo-1513828583835-c527ebc5003e?q=80&w=1000",
+    img: "https://images.unsplash.com/photo-1629540946404-ebe133e99f49?q=80&w=1000",
     tags: [
       "Asset Fabrication",
       "Pipeline Layouts",
