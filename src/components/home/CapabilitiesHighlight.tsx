@@ -113,7 +113,7 @@ export default function CapabilitiesHighlight() {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
-                className="group relative min-h-[380px] p-8 sm:p-12 bg-[#0F172A] border border-slate-900 overflow-hidden flex flex-col justify-between transition-all duration-500 cursor-pointer"
+                className="group relative min-h-[380px] lg:min-h-[450px] p-8 sm:p-12 bg-[#0F172A] border border-slate-900 overflow-hidden flex flex-col justify-between transition-all duration-500 cursor-pointer"
               >
                 {/* Visual Background Transition Layer */}
                 <div className="absolute inset-0 z-0">

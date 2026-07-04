@@ -60,7 +60,7 @@ export default function ExecutiveSummary() {
 
             {/* Primary Massive Infrastructure Image */}
             <motion.div
-              className="absolute top-0 left-0 w-[85%] h-[85%] rounded overflow-hidden shadow-2xl border border-slate-700/30 z-10"
+              className="absolute top-0 left-0 w-full h-full  rounded overflow-hidden shadow-2xl border border-slate-700/30 z-10"
               initial={{ opacity: 0, y: 40 }}
               animate={isContainerInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -68,7 +68,8 @@ export default function ExecutiveSummary() {
               <div
                 className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1590069261209-f8e9b8642343?q=80&w=1920')`,
+                  backgroundImage: `url('/images/home/executive-summary.png')`,
+                  //   backgroundImage: `url('https://images.unsplash.com/photo-1590069261209-f8e9b8642343?q=80&w=1920')`,
                 }}
               />
             </motion.div>

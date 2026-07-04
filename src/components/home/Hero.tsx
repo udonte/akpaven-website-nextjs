@@ -11,20 +11,7 @@ const headlineLine2 = ["African", "Infrastructure."];
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-const wordVariants = {
-  hidden: { opacity: 0, y: 48, filter: "blur(10px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.75, ease: easeOut },
-  },
-};
 
-const reducedMotionWordVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.4 } },
-};
 
 const fadeUp = (delay: number) => ({
   hidden: { opacity: 0, y: 28 },
@@ -38,37 +25,21 @@ const fadeUp = (delay: number) => ({
 function AnimatedWords({
   words,
   className,
-  reducedMotion,
-  delay = 0.35,
 }: {
   words: string[];
   className?: string;
-  reducedMotion: boolean;
-  delay?: number;
 }) {
   return (
-    <motion.span
-      variants={{
-        hidden: {},
-        visible: {
-          transition: { staggerChildren: 0.09, delayChildren: delay },
-        },
-      }}
-      initial="hidden"
-      animate="visible"
+    <span
       className={`flex flex-wrap gap-x-[0.3em] ${className ?? ""}`}
       aria-hidden="true"
     >
       {words.map((word) => (
-        <motion.span
-          key={word}
-          variants={reducedMotion ? reducedMotionWordVariants : wordVariants}
-          className="inline-block"
-        >
+        <span key={word} className="inline-block">
           {word}
-        </motion.span>
+        </span>
       ))}
-    </motion.span>
+    </span>
   );
 }
 
@@ -115,7 +86,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp(0.1)}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-amber backdrop-blur-sm sm:text-sm"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-amber backdrop-blur-sm sm:text-xs"
           >
             <IoShieldCheckmarkSharp className="text-base" />
             ISO 9001:2015 Certified EPCI Firm
@@ -128,13 +99,10 @@ export default function Hero() {
             <AnimatedWords
               words={headlineLine1}
               className="text-slate"
-              reducedMotion={!!reducedMotion}
             />
             <AnimatedWords
               words={headlineLine2}
-              delay={0.75}
               className="mt-1 bg-linear-to-r from-amber via-amber-300 to-slate bg-clip-text text-transparent"
-              reducedMotion={!!reducedMotion}
             />
           </h1>
 
@@ -176,23 +144,29 @@ export default function Hero() {
 
         {/* Floating stat badges — aligned to container right edge */}
         <div className="absolute right-4 bottom-12 z-20 hidden flex-col gap-4 lg:right-8 lg:flex">
-        {[
-          { metric: "23+", label: "Years Experience" },
-          { metric: "100%", label: "HSE Compliance" },
-        ].map((stat, i) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 1.2 + i * 0.15, ease: easeOut }}
-            className="w-48 rounded border border-slate-800 bg-navy/80 p-4 shadow-2xl backdrop-blur-md"
-          >
-            <div className="text-2xl font-black text-amber">{stat.metric}</div>
-            <div className="text-xs font-medium uppercase tracking-wider text-slate-400">
-              {stat.label}
-            </div>
-          </motion.div>
-        ))}
+          {[
+            { metric: "23+", label: "Years Experience" },
+            { metric: "100%", label: "HSE Compliance" },
+          ].map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: 1.2 + i * 0.15,
+                ease: easeOut,
+              }}
+              className="w-48 rounded border border-slate-800 bg-navy/80 p-4 shadow-2xl backdrop-blur-md"
+            >
+              <div className="text-2xl font-black text-amber">
+                {stat.metric}
+              </div>
+              <div className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </Container>
     </section>
