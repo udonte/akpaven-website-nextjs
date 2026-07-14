@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { HseCommitment } from "@/components/about/HseCommitment";
-import { Timeline } from "@/components/about/Timeline";
+import AboutHero from "@/components/about/AboutHero";
+import InteractiveTimeline from "@/components/about/InteractiveTimeline";
+import HseTargetZero from "@/components/about/HseTargetZero";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,8 +12,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Timeline />
-      <HseCommitment />
+      <AboutHero />
+      <InteractiveTimeline />
+      <HseTargetZero />
     </>
   );
 }

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { CapabilitiesGrid } from "@/components/services/CapabilitiesGrid";
+import CapabilitiesHero from "@/components/services/CapabilitiesHero";
+import InteractiveTabbedMatrix from "@/components/services/InteractiveTabbedMatrix";
+import ProcurementShowcase from "@/components/services/ProcurementShowcase";
+import SeoFaqCollapse from "@/components/services/SeoFaqCollapse";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -8,5 +11,12 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <CapabilitiesGrid />;
+  return (
+    <>
+      <CapabilitiesHero />
+      <InteractiveTabbedMatrix />
+      <ProcurementShowcase />
+      <SeoFaqCollapse />
+    </>
+  );
 }

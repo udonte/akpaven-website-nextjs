@@ -1,5 +1,7 @@
+import CaseStudyDeepDive from "@/components/portfolio/CaseStudyDeepDive";
+import FilterableProjectGallery from "@/components/portfolio/FilterableProjectGallery";
+import PortfolioHero from "@/components/portfolio/PortfolioHero";
 import type { Metadata } from "next";
-import { ProjectGallery } from "@/components/portfolio/ProjectGallery";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -8,5 +10,11 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
-  return <ProjectGallery />;
+  return (
+    <>
+      <PortfolioHero />
+      <FilterableProjectGallery />
+      <CaseStudyDeepDive />
+    </>
+  );
 }
